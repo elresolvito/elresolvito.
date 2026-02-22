@@ -276,3 +276,6 @@ export function Hero({ onTabChange }: HeroProps) {
     </section>
   );
 }
+    </section>
+  );
+}
