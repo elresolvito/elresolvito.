@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kaushan+Script&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 160 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 20% 15%;
+    --primary: 165 65% 15%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 90% 55%;
+    --secondary-foreground: 160 20% 15%;
+    --muted: 160 10% 95%;
+    --muted-foreground: 160 10% 40%;
+    --accent: 8 70% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 10% 90%;
+    --input: 160 10% 90%;
+    --ring: 165 65% 15%;
+    --radius: 0.75rem;
+    
+    --color-primary: #0d3b33;
+    --color-accent: #c94a37;
+    --color-gold: #f4b942;
+    --color-coral: #e86a56;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: 'Kaushan Script', cursive;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0d3b33] to-[#1a5a4d];
+  }
+  
+  .hero-image-mask {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    overflow: hidden;
+    box-shadow: 20px 20px 0px rgba(201, 74, 55, 0.1);
+    transition: all 0.5s ease;
+  }
+  
+  .hero-image-mask:hover {
+    border-radius: 50%;
+    box-shadow: 20px 20px 0px rgba(13, 59, 51, 0.1);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-[#0d3b33] text-white px-6 py-3 rounded-full font-semibold 
+           transition-all duration-300 hover:bg-[#0a2e28] hover:scale-105 
+           hover:shadow-lg flex items-center justify-center gap-2;
+  }
+  
+  .btn-accent {
+    @apply bg-[#c94a37] text-white px-6 py-3 rounded-full font-semibold 
+           transition-all duration-300 hover:bg-[#a83d2d] hover:scale-105 
+           hover:shadow-lg flex items-center justify-center gap-2;
+  }
+  
+  .category-btn {
+    @apply px-4 py-2 rounded-full font-medium transition-all duration-200 
+           bg-gray-100 text-gray-600 hover:bg-gray-200;
+  }
+  
+  .category-btn.active {
+    @apply bg-[#0d3b33] text-white;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseSoft {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
