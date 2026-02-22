@@ -4,10 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El Resolvito</title>
+    <style>
+      /* Estilos de respaldo para el Hero en caso de que el JS falle */
+      .hero-fallback {
+        background: linear-gradient(135deg, #0d3b33 0%, #1a5a4d 100%);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .hero-fallback h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-fallback p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
     <script type="module" crossorigin src="./assets/index-B3jTvqQp.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DoEmOoxH.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Este contenido se mostrará mientras carga React o si hay error -->
+      <div class="hero-fallback">
+        <h1>El Resolvito</h1>
+        <p>Tu tienda a domicilio en La Habana. Productos, servicios, rentas y ofertas al por mayor.</p>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <button style="background: white; color: #0d3b33; padding: 12px 24px; border-radius: 999px; font-weight: bold; border: none; cursor: pointer;">Productos</button>
+          <button style="background: white; color: #0d3b33; padding: 12px 24px; border-radius: 999px; font-weight: bold; border: none; cursor: pointer;">Servicios</button>
+          <button style="background: white; color: #0d3b33; padding: 12px 24px; border-radius: 999px; font-weight: bold; border: none; cursor: pointer;">Rentas</button>
+          <button style="background: white; color: #0d3b33; padding: 12px 24px; border-radius: 999px; font-weight: bold; border: none; cursor: pointer;">Ofertas</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
