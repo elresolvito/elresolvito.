@@ -394,25 +394,6 @@
         font-size: 3rem;
       }
       
-      /* ===== BANNER PROMOCIONAL (ESPACIO ENTRE HERO Y PRODUCTOS) ===== */
-      .promo-banner {
-        max-width: 1280px;
-        margin: 2rem auto;
-        padding: 0 2rem;
-      }
-      
-      .promo-banner img {
-        width: 100%;
-        height: auto;
-        border-radius: 1rem;
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
-      }
-      
-      .promo-banner img:hover {
-        transform: scale(1.02);
-      }
-      
       /* ===== TABS DE SECCIÓN ===== */
       .section-tabs {
         position: sticky;
@@ -649,6 +630,16 @@
         text-overflow: ellipsis;
       }
       
+      .product-description {
+        font-size: 0.875rem;
+        color: #4b5563;
+        margin-bottom: 0.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
       .product-footer {
         display: flex;
         align-items: center;
@@ -685,12 +676,12 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
     
-    <!-- Scripts de React -->
+    <!-- Scripts de React (intentarán cargar, pero si fallan no importa) -->
     <script type="module" crossorigin src="./assets/index-B3jTvqQp.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DoEmOoxH.css">
   </head>
   <body>
-    <!-- HEADER -->
+    <!-- HEADER COMPLETO CON BOTONES -->
     <header class="header-fixed" id="static-header">
       <div class="header-container">
         <div class="header-content">
@@ -734,7 +725,7 @@
       </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO CON IMAGEN -->
     <section class="hero-section">
       <div class="hero-bg-1"></div>
       <div class="hero-bg-2"></div>
@@ -825,18 +816,7 @@
       </div>
     </section>
 
-    <!-- ===== BANNER PROMOCIONAL - ESPACIO ENTRE HERO Y PRODUCTOS ===== -->
-    <div class="promo-banner">
-      <a href="https://postimg.cc/N5vvW1TP" target="_blank">
-        <img 
-          src="https://i.postimg.cc/7YfPJ9LD/banner_1l.jpg" 
-          alt="Promoción especial" 
-          onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22300%22%20viewBox%3D%220%200%201200%20300%22%3E%3Crect%20width%3D%221200%22%20height%3D%22300%22%20fill%3D%22%230d3b33%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%23ffffff%22%3E🔥%20PROMOCIÓN%20ESPECIAL%20🔥%3C%2Ftext%3E%3C%2Fsvg%3E'"
-        />
-      </a>
-    </div>
-
-    <!-- TABS DE SECCIÓN -->
+    <!-- TABS DE SECCIÓN (Productos/Servicios/Rentas/Ofertas) -->
     <div class="section-tabs">
       <div class="tabs-container">
         <div class="tabs-scroll">
@@ -860,7 +840,7 @@
       </div>
     </div>
 
-    <!-- SECCIÓN DE PRODUCTOS (INTACTA, NO MODIFICADA) -->
+    <!-- SECCIÓN DE PRODUCTOS (ESTÁTICA) -->
     <section class="products-section">
       <div class="products-container">
         <div class="products-header">
@@ -877,7 +857,7 @@
           </div>
         </div>
 
-        <!-- FILTROS DE CATEGORÍA -->
+        <!-- Filtros de categoría -->
         <div class="category-filters">
           <button class="category-btn active">Todos</button>
           <button class="category-btn">Alimentos</button>
@@ -890,7 +870,7 @@
           <button class="category-btn">Manualidades</button>
         </div>
 
-        <!-- Grid de productos -->
+        <!-- Grid de productos (16 productos como en el original) -->
         <div class="products-grid">
           <!-- Producto 1 -->
           <div class="product-card">
@@ -902,6 +882,7 @@
             <div class="product-info">
               <h3 class="product-name">Atún en lata</h3>
               <div class="product-details">Lata estándar</div>
+              <p class="product-description">Atún fresco en conserva, ideal para ensaladas y pastas.</p>
               <div class="product-footer">
                 <span class="product-price">$500</span>
                 <button class="product-add">+</button>
@@ -919,6 +900,7 @@
             <div class="product-info">
               <h3 class="product-name">Pasta de tomate</h3>
               <div class="product-details">Paquete</div>
+              <p class="product-description">Concentrado de tomate para salsas y guisos.</p>
               <div class="product-footer">
                 <span class="product-price">$350</span>
                 <button class="product-add">+</button>
@@ -936,6 +918,7 @@
             <div class="product-info">
               <h3 class="product-name">Pimiento fresco</h3>
               <div class="product-details">Unidad</div>
+              <p class="product-description">Pimiento jugoso y lleno de sabor.</p>
               <div class="product-footer">
                 <span class="product-price">$750</span>
                 <button class="product-add">+</button>
@@ -953,6 +936,7 @@
             <div class="product-info">
               <h3 class="product-name">Café premium 250g</h3>
               <div class="product-details">Paquete 250g</div>
+              <p class="product-description">Café molido aromático y balanceado.</p>
               <div class="product-footer">
                 <span class="product-price">$1450</span>
                 <button class="product-add">+</button>
@@ -970,6 +954,7 @@
             <div class="product-info">
               <h3 class="product-name">Cartón de huevo 30u</h3>
               <div class="product-details">Cartón</div>
+              <p class="product-description">Huevos frescos en cartón de 30 unidades.</p>
               <div class="product-footer">
                 <span class="product-price">$3000</span>
                 <button class="product-add">+</button>
@@ -987,6 +972,7 @@
             <div class="product-info">
               <h3 class="product-name">Leche condensada</h3>
               <div class="product-details">Lata 397g</div>
+              <p class="product-description">Leche condensada cremosa, perfecta para postres.</p>
               <div class="product-footer">
                 <span class="product-price">$950</span>
                 <button class="product-add">+</button>
@@ -1004,6 +990,7 @@
             <div class="product-info">
               <h3 class="product-name">Harina blanca 1Kg</h3>
               <div class="product-details">Paquete 1Kg</div>
+              <p class="product-description">Harina refinada ideal para repostería y panadería.</p>
               <div class="product-footer">
                 <span class="product-price">$600</span>
                 <button class="product-add">+</button>
@@ -1021,6 +1008,7 @@
             <div class="product-info">
               <h3 class="product-name">Papitas crujientes</h3>
               <div class="product-details">Paquete 90g</div>
+              <p class="product-description">Snacks crujientes sabor ajo.</p>
               <div class="product-footer">
                 <span class="product-price">$400</span>
                 <button class="product-add">+</button>
