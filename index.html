@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El Resolvito</title>
     <style>
-      /* ===== RESET Y ESTILOS GLOBALES ===== */
+      /* Estilos completos - exactamente como los usa React */
       * { margin: 0; padding: 0; box-sizing: border-box; }
       
       body {
@@ -14,7 +14,7 @@
         color: #1f2937;
       }
       
-      /* ===== HEADER ===== */
+      /* Header styles */
       .header-fixed {
         position: fixed;
         top: 0;
@@ -64,64 +64,7 @@
         color: #0d3b33;
       }
       
-      .header-nav {
-        display: flex;
-        gap: 0.5rem;
-      }
-      
-      .header-nav-btn {
-        background: transparent;
-        border: none;
-        color: rgba(255,255,255,0.8);
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: all 0.2s;
-      }
-      
-      .header-nav-btn:hover {
-        background: rgba(255,255,255,0.1);
-        color: white;
-      }
-      
-      .header-actions {
-        display: flex;
-        gap: 0.75rem;
-      }
-      
-      .header-icon-btn {
-        background: transparent;
-        border: none;
-        color: rgba(255,255,255,0.8);
-        padding: 0.5rem;
-        border-radius: 9999px;
-        cursor: pointer;
-        position: relative;
-      }
-      
-      .header-icon-btn:hover {
-        background: rgba(255,255,255,0.1);
-        color: white;
-      }
-      
-      .cart-badge {
-        position: absolute;
-        top: -0.25rem;
-        right: -0.25rem;
-        width: 1.25rem;
-        height: 1.25rem;
-        background: #c94a37;
-        color: white;
-        font-size: 0.75rem;
-        font-weight: bold;
-        border-radius: 9999px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      /* ===== HERO ===== */
+      /* Hero styles */
       .hero-section {
         position: relative;
         padding-top: 7rem;
@@ -383,6 +326,10 @@
         animation-duration: 4s;
       }
       
+      #root {
+        min-height: 50vh;
+      }
+      
       .image-fallback {
         display: flex;
         align-items: center;
@@ -393,295 +340,14 @@
         color: white;
         font-size: 3rem;
       }
-      
-      /* ===== TABS DE SECCIÓN ===== */
-      .section-tabs {
-        position: sticky;
-        top: 80px;
-        z-index: 40;
-        background: rgba(255,255,255,0.95);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid #e5e7eb;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-      }
-      
-      .tabs-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-      
-      .tabs-scroll {
-        display: flex;
-        overflow-x: auto;
-        gap: 0.25rem;
-        padding: 0.75rem 0;
-        scrollbar-width: none;
-      }
-      
-      .tabs-scroll::-webkit-scrollbar {
-        display: none;
-      }
-      
-      .tab-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.625rem 1rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        white-space: nowrap;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s;
-        color: #4b5563;
-      }
-      
-      .tab-btn:hover {
-        background: #f3f4f6;
-      }
-      
-      .tab-btn.active {
-        background: #0d3b33;
-        color: white;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-      }
-      
-      /* ===== SECCIÓN DE PRODUCTOS ===== */
-      .products-section {
-        padding: 3rem 0;
-        min-height: 60vh;
-      }
-      
-      .products-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-      
-      .products-header {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-      
-      @media (min-width: 768px) {
-        .products-header {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-        }
-      }
-      
-      .products-title h2 {
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: #111827;
-        margin-bottom: 0.5rem;
-      }
-      
-      .products-title p {
-        color: #4b5563;
-      }
-      
-      .products-count {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: #6b7280;
-        font-size: 0.875rem;
-      }
-      
-      .category-filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 2rem;
-      }
-      
-      .category-btn {
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        font-weight: 500;
-        background: #f3f4f6;
-        color: #4b5563;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-size: 0.875rem;
-      }
-      
-      .category-btn:hover {
-        background: #e5e7eb;
-      }
-      
-      .category-btn.active {
-        background: #0d3b33;
-        color: white;
-      }
-      
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-      }
-      
-      @media (min-width: 768px) {
-        .products-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1.5rem;
-        }
-      }
-      
-      @media (min-width: 1024px) {
-        .products-grid {
-          grid-template-columns: repeat(4, 1fr);
-        }
-      }
-      
-      .product-card {
-        background: white;
-        border-radius: 1rem;
-        overflow: hidden;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
-        border: 1px solid #f3f4f6;
-        transition: all 0.3s;
-        cursor: pointer;
-      }
-      
-      .product-card:hover {
-        transform: translateY(-0.25rem);
-        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-      }
-      
-      .product-image-container {
-        position: relative;
-        aspect-ratio: 1 / 1;
-        overflow: hidden;
-        background: #f3f4f6;
-      }
-      
-      .product-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s;
-      }
-      
-      .product-card:hover .product-image {
-        transform: scale(1.1);
-      }
-      
-      .product-favorite {
-        position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 9999px;
-        background: rgba(255,255,255,0.9);
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.25rem;
-        transition: all 0.2s;
-      }
-      
-      .product-favorite:hover {
-        background: #ef4444;
-        color: white;
-      }
-      
-      .product-badge {
-        position: absolute;
-        top: 0.75rem;
-        left: 0.75rem;
-        background: rgba(13,59,51,0.9);
-        color: white;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-      }
-      
-      .product-info {
-        padding: 1rem;
-      }
-      
-      .product-name {
-        font-weight: 600;
-        color: #111827;
-        margin-bottom: 0.25rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      
-      .product-details {
-        font-size: 0.75rem;
-        color: #6b7280;
-        margin-bottom: 0.5rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      
-      .product-description {
-        font-size: 0.875rem;
-        color: #4b5563;
-        margin-bottom: 0.75rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      
-      .product-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      
-      .product-price {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #0d3b33;
-      }
-      
-      .product-add {
-        width: 2.5rem;
-        height: 2.5rem;
-        background: #0d3b33;
-        color: white;
-        border: none;
-        border-radius: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-size: 1.25rem;
-      }
-      
-      .product-add:hover {
-        background: #0a2e28;
-        transform: scale(1.1);
-      }
     </style>
-    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
-    
-    <!-- Scripts de React (intentarán cargar, pero si fallan no importa) -->
     <script type="module" crossorigin src="./assets/index-B3jTvqQp.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DoEmOoxH.css">
   </head>
   <body>
-    <!-- HEADER COMPLETO CON BOTONES -->
+    <!-- Header Estático -->
     <header class="header-fixed" id="static-header">
       <div class="header-container">
         <div class="header-content">
@@ -692,40 +358,11 @@
               <div style="font-size:0.75rem; opacity:0.7;">Tu tienda a domicilio</div>
             </div>
           </div>
-          
-          <nav class="header-nav">
-            <button class="header-nav-btn">Productos</button>
-            <button class="header-nav-btn">Servicios</button>
-            <button class="header-nav-btn">Rentas</button>
-            <button class="header-nav-btn">Ofertas Mayor</button>
-          </nav>
-          
-          <div class="header-actions">
-            <button class="header-icon-btn" aria-label="Buscar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </button>
-            <button class="header-icon-btn" aria-label="Carrito">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="9" cy="21" r="1"></circle>
-                <circle cx="20" cy="21" r="1"></circle>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-              </svg>
-              <span class="cart-badge">3</span>
-            </button>
-            <button class="header-icon-btn" aria-label="Favoritos">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </header>
 
-    <!-- HERO CON IMAGEN -->
+    <!-- Hero Estático - CON LA NUEVA IMAGEN -->
     <section class="hero-section">
       <div class="hero-bg-1"></div>
       <div class="hero-bg-2"></div>
@@ -774,7 +411,7 @@
             </div>
           </div>
 
-          <!-- Imagen derecha -->
+          <!-- Imagen derecha - AHORA CON TU BANNER -->
           <div class="hero-image-wrapper">
             <div class="relative">
               <div class="hero-image-mask">
@@ -785,11 +422,11 @@
                 />
               </div>
 
-              <!-- Floating cards -->
+              <!-- Floating card 1 -->
               <div class="floating-card left">
                 <div style="display:flex; align-items:center; gap:0.75rem;">
                   <div style="width:3rem; height:3rem; background:#d1fae5; border-radius:0.75rem; display:flex; align-items:center; justify-content:center;">
-                    <svg style="width:1.5rem; height:1.5rem; color:#059669;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg style="width:1.5rem; height:1.5rem; color:#059669;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
                     </svg>
                   </div>
@@ -800,6 +437,7 @@
                 </div>
               </div>
 
+              <!-- Floating card 2 -->
               <div class="floating-card right">
                 <div style="display:flex; align-items:center; gap:0.5rem;">
                   <div style="display:flex;">
@@ -816,208 +454,13 @@
       </div>
     </section>
 
-    <!-- TABS DE SECCIÓN (Productos/Servicios/Rentas/Ofertas) -->
-    <div class="section-tabs">
-      <div class="tabs-container">
-        <div class="tabs-scroll">
-          <button class="tab-btn active">
-            <span>🛍️</span>
-            <span>Productos</span>
-          </button>
-          <button class="tab-btn">
-            <span>🔧</span>
-            <span>Servicios</span>
-          </button>
-          <button class="tab-btn">
-            <span>🏠</span>
-            <span>Rentas</span>
-          </button>
-          <button class="tab-btn">
-            <span>🏷️</span>
-            <span>Ofertas Mayor</span>
-          </button>
-        </div>
+    <!-- Contenedor para React (productos) -->
+    <div id="root">
+      <div style="text-align:center; padding:4rem; color:#6b7280;">
+        <div style="font-size:3rem; margin-bottom:1rem;">🛍️</div>
+        <h3 style="font-size:1.25rem;">Cargando productos...</h3>
       </div>
     </div>
-
-    <!-- SECCIÓN DE PRODUCTOS (ESTÁTICA) -->
-    <section class="products-section">
-      <div class="products-container">
-        <div class="products-header">
-          <div class="products-title">
-            <h2>Productos</h2>
-            <p>Encuentra todo lo que necesitas para tu hogar</p>
-          </div>
-          <div class="products-count">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 21v-7a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v7"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            <span>26 productos</span>
-          </div>
-        </div>
-
-        <!-- Filtros de categoría -->
-        <div class="category-filters">
-          <button class="category-btn active">Todos</button>
-          <button class="category-btn">Alimentos</button>
-          <button class="category-btn">Snacks</button>
-          <button class="category-btn">Salsas</button>
-          <button class="category-btn">Higiene</button>
-          <button class="category-btn">Perfumes</button>
-          <button class="category-btn">Bebidas</button>
-          <button class="category-btn">Ropa</button>
-          <button class="category-btn">Manualidades</button>
-        </div>
-
-        <!-- Grid de productos (16 productos como en el original) -->
-        <div class="products-grid">
-          <!-- Producto 1 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" alt="Atún en lata" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🥫%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Atún en lata</h3>
-              <div class="product-details">Lata estándar</div>
-              <p class="product-description">Atún fresco en conserva, ideal para ensaladas y pastas.</p>
-              <div class="product-footer">
-                <span class="product-price">$500</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 2 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1594972949099-6a8db5d5a5c3?w=400" alt="Pasta de tomate" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🍅%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Pasta de tomate</h3>
-              <div class="product-details">Paquete</div>
-              <p class="product-description">Concentrado de tomate para salsas y guisos.</p>
-              <div class="product-footer">
-                <span class="product-price">$350</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 3 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1563565375-f3fdf5e2c691?w=400" alt="Pimiento fresco" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🫑%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Pimiento fresco</h3>
-              <div class="product-details">Unidad</div>
-              <p class="product-description">Pimiento jugoso y lleno de sabor.</p>
-              <div class="product-footer">
-                <span class="product-price">$750</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 4 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400" alt="Café premium" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E☕%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Café premium 250g</h3>
-              <div class="product-details">Paquete 250g</div>
-              <p class="product-description">Café molido aromático y balanceado.</p>
-              <div class="product-footer">
-                <span class="product-price">$1450</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 5 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400" alt="Huevos" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🥚%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Cartón de huevo 30u</h3>
-              <div class="product-details">Cartón</div>
-              <p class="product-description">Huevos frescos en cartón de 30 unidades.</p>
-              <div class="product-footer">
-                <span class="product-price">$3000</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 6 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400" alt="Leche condensada" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🥛%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Leche condensada</h3>
-              <div class="product-details">Lata 397g</div>
-              <p class="product-description">Leche condensada cremosa, perfecta para postres.</p>
-              <div class="product-footer">
-                <span class="product-price">$950</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 7 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1627485937980-221c88ac04f9?w=400" alt="Harina" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🌾%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Alimentos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Harina blanca 1Kg</h3>
-              <div class="product-details">Paquete 1Kg</div>
-              <p class="product-description">Harina refinada ideal para repostería y panadería.</p>
-              <div class="product-footer">
-                <span class="product-price">$600</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 8 -->
-          <div class="product-card">
-            <div class="product-image-container">
-              <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400" alt="Papitas" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E🥔%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
-              <button class="product-favorite">🤍</button>
-              <span class="product-badge">Snacks</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Papitas crujientes</h3>
-              <div class="product-details">Paquete 90g</div>
-              <p class="product-description">Snacks crujientes sabor ajo.</p>
-              <div class="product-footer">
-                <span class="product-price">$400</span>
-                <button class="product-add">+</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <script>
       // Hacer que el header cambie con el scroll
